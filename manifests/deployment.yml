@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "drugapi-bb22"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "drugapi-bb22"
+  template:
+    metadata:
+      labels:
+        app: "drugapi-bb22"
+    spec:
+      containers:
+        - name: "drugapi-bb22"
+          image: "drugss.azurecr.io/drugapi"
+          ports:
+          - containerPort: 80
