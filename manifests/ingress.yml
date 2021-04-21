@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "drugapi-bb22"
+    labels:
+        app: "drugapi-bb22"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: drug-apia883-drugapi-bb22.07935f6fa5604548b4e8.centralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "drugapi-bb22"
+                servicePort: 80
